@@ -49,8 +49,17 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 624c7d16daebd742835b1ef3baccf15d
     GuidInternal: 
-    m_lastTime: -8585884690960026625
-    List: []
+    m_lastTime: -8585884668245711294
+    List:
+    - name: Main
+      guid: 5e87f7ec94478443bd8999f4a6a76f42
+      id: 3161908922
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Main
+        ObjectType: 7
+      Path: Default Work Unit\Main
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
