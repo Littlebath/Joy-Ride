@@ -4,7 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Projectile
+  - Bullet
+  - Enemy
+  - SpawnPoint
+  - Rooms
   layers:
   - Default
   - TransparentFX
@@ -14,10 +17,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Room
+  - Enemies
+  - Bullet
   - 
   - 
   - 

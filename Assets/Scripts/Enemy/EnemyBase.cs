@@ -21,9 +21,8 @@ public class EnemyBase : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Projectile"))
+        if (collision.CompareTag("Bullet") || collision.CompareTag("Player"))
         {
-            Destroy(collision.gameObject);
             Destroy(gameObject);
             //Debug.Log("Hit by bullet");
         }

@@ -7,6 +7,7 @@ public class PlayerInput : MonoBehaviour
     [HideInInspector] public float horizontalInput;
     [HideInInspector] public float verticalInput;
     [HideInInspector] public bool fire;
+     public bool dash;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class PlayerInput : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
         fire = Input.GetButtonDown("Fire1");
+        dash = Input.GetButtonDown("Dash");
         
         //Debug.Log(horizontalInput);
         //Debug.Log(verticalInput);
