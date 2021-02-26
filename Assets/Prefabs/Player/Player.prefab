@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4519210225051841881}
   - component: {fileID: 4519210225051841882}
   - component: {fileID: 1776966419508098243}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -66,12 +66,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 251399d50a1d81349989d357b63fcbc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 10
   bulletSpeed: 20
   bulletTime: 2
   firePoint: {fileID: 5510246899990383250}
-  dashSpeed: 50
+  dashSpeed: 25
   startDashTime: 0.1
+  health: 5
   cam: {fileID: 0}
   pi: {fileID: 4519210225051841880}
   ps: {fileID: 4519210225051841882}
@@ -140,7 +141,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4519210226732206227}
   - component: {fileID: 4519210226732206229}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 'Collider '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4519210226771682658}
   - component: {fileID: 4519210226771682659}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +268,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7854184360317634941}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +283,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5510246899990383250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.632, z: 0}
+  m_LocalPosition: {x: 0, y: 0.824, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4519210225051841878}

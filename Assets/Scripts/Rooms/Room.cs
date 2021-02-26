@@ -8,12 +8,14 @@ public class Room : MonoBehaviour
     public enum RoomType 
     {
         Enemy,
-        Empty
+        Empty,
+        Boss
     }
     public RoomType roomType;
     public GameObject cam;
     public Door[] door;
     public GameObject enemies;
+    public GameObject exitContainer;
 
     private void Update()
     {
@@ -23,6 +25,17 @@ public class Room : MonoBehaviour
             {
                 OpenAllDoors();
             }
+        }
+
+        else if (roomType == RoomType.Boss)
+        {
+            if (enemies.transform.childCount <= 0)
+            {
+                OpenAllDoors();
+                //Activate escape room.
+                exitContainer.SetActive(true);
+            }
+
         }
     }
 
@@ -49,6 +62,11 @@ public class Room : MonoBehaviour
             cam.SetActive(true);
 
             if (roomType == RoomType.Enemy)
+            {
+                enemies.SetActive(true);
+            }
+
+            else if (roomType == RoomType.Boss)
             {
                 enemies.SetActive(true);
             }

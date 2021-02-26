@@ -69,6 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f5d4ccd6ace93949bb448311756a3fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 1
   rb2D: {fileID: 6969688874461301462}
   coll: {fileID: 6969688874933729050}
 --- !u!58 &7973894286462282266
