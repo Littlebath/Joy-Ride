@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7788631521245645039}
   - component: {fileID: 7973894286462282266}
   - component: {fileID: 6340119154848575991}
+  - component: {fileID: 6783397429725835562}
   m_Layer: 10
   m_Name: Enemy AI
   m_TagString: Enemy
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6969688874461301466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.29, y: 3.67, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 6969688875124710125}
   - {fileID: 6969688874933729052}
@@ -101,6 +102,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+--- !u!95 &6783397429725835562
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6969688874461301466}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6969688874933729053
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,8 +238,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b8a2b7fcb3d3ce841b74b4ebaff8438f, type: 3}
-  m_Color: {r: 0.41509432, g: 0.30266935, b: 0.1194375, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 9a04bcf9de230b349ba46571e07d844f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private SpriteRenderer sprite;
     [SerializeField] private Rigidbody2D rb2d;
     [SerializeField] private Collider2D coll;
+    [SerializeField] private GameObject crossHair;
 
 
     // Start is called before the first frame update
@@ -95,6 +96,7 @@ public class PlayerController : MonoBehaviour
     private void Aim()
     {
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        crossHair.transform.position = mousePos;
     }
 
     private void CalculateDashDirection()

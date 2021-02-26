@@ -34,7 +34,7 @@ public class Door : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (room.roomType == Room.RoomType.Enemy)
+        if (room.roomType == Room.RoomType.Enemy || room.roomType == Room.RoomType.Boss)
         {
             if (collision.CompareTag("Player"))
             {
