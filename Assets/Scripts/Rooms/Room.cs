@@ -12,7 +12,6 @@ public class Room : MonoBehaviour
         Boss
     }
     public RoomType roomType;
-    public GameObject cam;
     public Door[] door;
     public GameObject enemies;
     public GameObject exitContainer;
@@ -59,7 +58,8 @@ public class Room : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            cam.SetActive(true);
+            //cam.SetActive(true);
+            //Stop Layer from hiding
 
             if (roomType == RoomType.Enemy)
             {
@@ -77,7 +77,7 @@ public class Room : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            cam.SetActive(false);
+            //cam.SetActive(false);
         }
     }
 }

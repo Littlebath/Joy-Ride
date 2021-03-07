@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    public Animator tilemapAnim;
     public Room room;
     private GameObject doorObj;
 
@@ -34,6 +35,8 @@ public class Door : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        tilemapAnim.SetTrigger("Fade");
+
         if (room.roomType == Room.RoomType.Enemy || room.roomType == Room.RoomType.Boss)
         {
             if (collision.CompareTag("Player"))
