@@ -49,7 +49,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,10 +93,11 @@ GameObject:
   - component: {fileID: 4519210225051841878}
   - component: {fileID: 4519210225051841880}
   - component: {fileID: 4519210225051841879}
-  - component: {fileID: 4519210225051841881}
   - component: {fileID: 4519210225051841882}
+  - component: {fileID: 4519210225051841881}
   - component: {fileID: 1776966419508098243}
   - component: {fileID: 1664739005453844927}
+  - component: {fileID: 8719680122633411660}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -154,16 +155,38 @@ MonoBehaviour:
   bulletSpeed: 20
   bulletTime: 2
   firePoint: {fileID: 5510246899990383250}
-  dashSpeed: 25
-  startDashTime: 0.1
-  health: 5
+  dashSpeed: 30
+  startDashTime: 0.15
+  health: 10
+  maxHealth: 10
+  mousePos: {x: 0, y: 0}
+  damagePopup: {fileID: 6243584629572025575, guid: ddf9f86eb484a5d48a945da161a38b1e,
+    type: 3}
+  healthBar: {fileID: 0}
   cam: {fileID: 0}
   pi: {fileID: 4519210225051841880}
   ps: {fileID: 4519210225051841882}
-  sprite: {fileID: 0}
+  sprite: {fileID: 6443304165554558010}
   rb2d: {fileID: 4519210225051841881}
   coll: {fileID: 4519210226732206229}
   crossHair: {fileID: 1594044808}
+  gameoverUI: {fileID: 0}
+--- !u!114 &4519210225051841882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4519210225051841877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9bbfe2d100d4dc45ad96a537cac94b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shot: {fileID: 7736603488357404831, guid: 8467e6498e7d26a43986551136643845, type: 3}
+  pi: {fileID: 4519210225051841880}
+  pc: {fileID: 4519210225051841879}
+  particleSystem: {fileID: 0}
 --- !u!50 &4519210225051841881
 Rigidbody2D:
   serializedVersion: 4
@@ -185,21 +208,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &4519210225051841882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4519210225051841877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9bbfe2d100d4dc45ad96a537cac94b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shot: {fileID: 7736603488357404831, guid: 8467e6498e7d26a43986551136643845, type: 3}
-  pi: {fileID: 4519210225051841880}
-  pc: {fileID: 4519210225051841879}
 --- !u!58 &1776966419508098243
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -235,6 +243,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8719680122633411660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4519210225051841877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 983fa8f29badc154bb7d7bbc6eaff5f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4519210226732206226
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +301,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.34
 --- !u!1 &5510246899990383250
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +326,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5510246899990383250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.185, y: 0.671, z: 0}
+  m_LocalPosition: {x: 0, y: 0.832, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4519210225051841878}
@@ -361,7 +381,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

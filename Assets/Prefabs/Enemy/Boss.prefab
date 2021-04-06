@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5482617500845116371}
   m_Layer: 10
   m_Name: 'Collider '
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -198,8 +198,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  knockbackForce: 3
   rb2D: {fileID: 5482617501447501343}
   coll: {fileID: 5482617500845116371}
+  sprite: {fileID: 0}
 --- !u!58 &4757932130187990739
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: ddbdf47023b6e6f4c8a09b403e5bc760
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7443983602517512024
+    second: hitman1_stand_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -109,7 +112,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: hitman1_stand_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 11
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a07c1a7a58a1b890800000000000000
+      internalID: -7443983602517512024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

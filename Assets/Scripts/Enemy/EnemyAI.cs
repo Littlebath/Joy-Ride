@@ -5,16 +5,16 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     public float speed;
-    private Transform playerPos;
+    private GameObject player;
     // Start is called before the first frame update
     void Start()
     {
-        playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, playerPos.position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }
 }

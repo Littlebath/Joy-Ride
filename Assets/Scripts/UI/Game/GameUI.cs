@@ -5,11 +5,5 @@ using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
 {
-    public GameObject playerHealth;
-    public PlayerController pc;
 
-    private void Update()
-    {
-        playerHealth.GetComponent<Text>().text = "Health: " + pc.health;
-    }
 }
