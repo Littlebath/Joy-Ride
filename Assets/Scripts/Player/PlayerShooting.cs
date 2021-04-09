@@ -6,6 +6,7 @@ using CodeMonkey.Utils;
 
 public class PlayerShooting : MonoBehaviour
 {
+    public int weaponType;
     public GameObject shot;
     [SerializeField] private PlayerInput pi;
     [SerializeField] private PlayerController pc;
@@ -26,19 +27,38 @@ public class PlayerShooting : MonoBehaviour
     {
         if (pi.fire)
         {
+            if (weaponType == 1)
+            {
+                GameObject bullet = Instantiate(shot, pc.firePoint.transform.position, pc.firePoint.transform.rotation);
+                Rigidbody2D rb2D = bullet.GetComponent<Rigidbody2D>();
+
+                rb2D.AddForce(pc.firePoint.transform.up * pc.bulletSpeed, ForceMode2D.Impulse);
+                Destroy(bullet, pc.bulletTime);
+            }
+
+            else if (weaponType == 2)
+            {
+                GameObject bullet = Instantiate(shot, pc.firePoint.transform.position, pc.firePoint.transform.rotation);
+
+                Rigidbody2D rb2D = bullet.GetComponent<Rigidbody2D>();
+
+                rb2D.AddForce(pc.firePoint.transform.up * pc.bulletSpeed, ForceMode2D.Impulse);
+                Destroy(bullet, pc.bulletTime);
+            }
+
+            else if (weaponType == 3)
+            {
+
+            }
+
             CameraController.Instance.ShakeCamera(5f, 0.1f);
             BulletParticles(pc.firePoint.transform.position);
-            GameObject bullet = Instantiate(shot, pc.firePoint.transform.position, pc.firePoint.transform.rotation);
-            Rigidbody2D rb2D = bullet.GetComponent<Rigidbody2D>();
-            rb2D.AddForce(pc.firePoint.transform.up * pc.bulletSpeed, ForceMode2D.Impulse);
-            Destroy(bullet, pc.bulletTime);
         }
     }
     public void BulletParticles(Vector3 position)
     {
         Vector3 quadPosition = position;
         Vector3 quadSize = new Vector3(0.5f, 0.5f);
-        float rotation = 0f;
 
         Vector3 shootDir = (pc.firePoint.transform.position - pc.gameObject.transform.position).normalized;
         quadPosition += (shootDir * -0.5f);

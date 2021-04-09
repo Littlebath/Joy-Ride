@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - SpawnPoint
   - Rooms
+  - Lights
   layers:
   - Default
   - TransparentFX
@@ -42,9 +43,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Floor
+    uniqueID: 876480425
+    locked: 0
+  - name: Objects on floor
+    uniqueID: 1427978309
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Top
+  - name: Objects on objects
+    uniqueID: 3439699715
+    locked: 0
+  - name: Walls
     uniqueID: 783998679
     locked: 0

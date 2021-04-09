@@ -96,7 +96,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -197,11 +197,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f5d4ccd6ace93949bb448311756a3fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
   health: 50
   knockbackForce: 3
+  characterID: 0
+  damagePopup: {fileID: 0}
+  healthBar: {fileID: 0}
   rb2D: {fileID: 5482617501447501343}
   coll: {fileID: 5482617500845116371}
   sprite: {fileID: 0}
+  characterHead: {fileID: 0}
+  bloodExplosion: {fileID: 0}
+  bloodPermanent: {fileID: 0}
 --- !u!58 &4757932130187990739
 CircleCollider2D:
   m_ObjectHideFlags: 0

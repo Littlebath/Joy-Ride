@@ -28,7 +28,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        offset = cam.ScreenToWorldPoint(Input.mousePosition).normalized - player.transform.position.normalized;
+        offset = cam.ScreenToWorldPoint(Input.mousePosition).normalized;
         cineCam.m_Offset = offset * distanceMultiplier;
 
         if (canShake)
