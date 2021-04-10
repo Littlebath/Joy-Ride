@@ -14,12 +14,6 @@ public class Door : MonoBehaviour
         doorObj = gameObject.transform.parent.gameObject;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void CloseDoors ()
     {
         doorObj.GetComponent<SpriteRenderer>().enabled = true;

@@ -76,10 +76,6 @@ public class PlayerController : MonoBehaviour
             rb2d.velocity = moveVelocity;
         }
 
-        //Turn to face cursor
-        Vector2 lookDir = mousePos - rb2d.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        rb2d.rotation = angle;
 
         //Dashing
         if (isDashing)
@@ -116,7 +112,22 @@ public class PlayerController : MonoBehaviour
     }
     private void Aim()
     {
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        //Turn to face cursor
+        /*Vector2 lookDir = mousePos - rb2d.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        rb2d.rotation = angle;*/
+
+        FaceMouse();
+    }
+
+    void FaceMouse ()
+    {
+        mousePos = Input.mousePosition;
+        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+
+        Vector2 direction = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
+        transform.up = direction;
+
         crossHair.transform.position = mousePos;
     }
 
@@ -200,7 +211,7 @@ public class PlayerController : MonoBehaviour
         {
             DamageTaken(UnityEngine.Random.Range(50, 100));
             Vector3 direction = Vector3.Normalize(gameObject.transform.position - collision.gameObject.transform.position);
-            knockBack(gameObject, direction, 4f, 0.2f);
+            knockBack(gameObject, direction, 0f, 0.2f);
         }
     }
 }

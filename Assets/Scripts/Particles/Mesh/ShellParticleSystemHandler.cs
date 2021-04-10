@@ -57,7 +57,7 @@ public class ShellParticleSystemHandler : MonoBehaviour
             this.direction = direction;
             this.meshParticleSystem = meshParticleSystem;
 
-            quadSize = new Vector3(0.1f, 0.2f);
+            quadSize = new Vector3(0.05f, 0.1f);
             moveSpeed = Random.Range(3f, 9f);
             rotation = Random.Range(0, 360f);
 

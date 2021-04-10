@@ -72,7 +72,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 500
   health: 1
-  knockbackForce: 3
+  knockbackForce: 1
   characterID: 2
   damagePopup: {fileID: 6243584629572025575, guid: ddf9f86eb484a5d48a945da161a38b1e,
     type: 3}
@@ -184,6 +184,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
