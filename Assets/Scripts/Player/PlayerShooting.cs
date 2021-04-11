@@ -53,6 +53,7 @@ public class PlayerShooting : MonoBehaviour
 
             CameraController.Instance.ShakeCamera(5f, 0.1f);
             BulletParticles(pc.firePoint.transform.position);
+            FindObjectOfType<AudioManager>().PlaySound("Player Shoot");
         }
     }
     public void BulletParticles(Vector3 position)

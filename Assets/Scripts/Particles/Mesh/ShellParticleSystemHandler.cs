@@ -34,7 +34,6 @@ public class ShellParticleSystemHandler : MonoBehaviour
     public void SpawnShell (Vector3 position, Vector3 direction)
     {
         singleList.Add(new Single(position, direction, meshParticleSystem));
-        Debug.Log("Spawning shell");
     }
 
     /*
