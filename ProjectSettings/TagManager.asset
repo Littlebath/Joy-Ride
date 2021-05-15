@@ -9,6 +9,8 @@ TagManager:
   - SpawnPoint
   - Rooms
   - Lights
+  - Wall
+  - Paddle
   layers:
   - Default
   - TransparentFX
@@ -24,8 +26,8 @@ TagManager:
   - Bullet
   - Invisible Room
   - Head
-  - 
-  - 
+  - Ignore Light
+  - Post Processing
   - 
   - 
   - 

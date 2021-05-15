@@ -9,6 +9,10 @@ public class EnemyCharge : MonoBehaviour
     [SerializeField] private float chaseTimer;
     [SerializeField] private float dashTimer;
 
+    [SerializeField] private SpriteRenderer sprite;
+
+    private Transform lastKnowPos;
+
     private float timerCountdown;
     public enum EnemyBehavior
     {
@@ -44,11 +48,14 @@ public class EnemyCharge : MonoBehaviour
             {
                 timerCountdown = dashTimer;
                 enemyBehavior = EnemyBehavior.Dash;
+                lastKnowPos = player.transform;
+                sprite.color = Color.magenta;
             }
 
             else
             {
                 transform.position = Vector2.MoveTowards(transform.position, player.transform.position, chaseSpeed * Time.deltaTime);
+                sprite.color = Color.Lerp(Color.magenta, Color.white, timerCountdown);
             }
         }
 
@@ -60,11 +67,12 @@ public class EnemyCharge : MonoBehaviour
             {
                 timerCountdown = chaseTimer;
                 enemyBehavior = EnemyBehavior.Chase;
+                sprite.color = Color.white;
             }
 
             else
             {
-                gameObject.GetComponent<Rigidbody2D>().AddForce(gameObject.transform.up * dashSpeed, ForceMode2D.Impulse);
+                transform.position = Vector2.MoveTowards(transform.position, lastKnowPos.transform.position, dashSpeed * Time.deltaTime);
             }
         }
     }

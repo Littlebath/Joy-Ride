@@ -48,7 +48,7 @@ public class BloodParticleSystemHandler : MonoBehaviour {
 
 
     /*
-     * Represents a single Dirt Particle
+     * Represents a single Blood Particle
      * */
     private class Single {
 

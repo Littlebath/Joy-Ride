@@ -172,7 +172,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8857048558035296191}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Color: {r: 0.9056604, g: 0.11273556, b: 0.089711644, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.39
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: a9073e3445381d550000000003a705cdd7deba2e
   m_LightCookieSprite: {fileID: 21300000, guid: 7161a2b5b95f55642962ef9cfb18ae14,
     type: 3}
   m_UseNormalMap: 0

@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private float nextSpawnDirtTime;
 
     [Header("Integers")]
+    [HideInInspector] public int colorChange;
 
     [Header("Vectors")]
     private Vector2 moveVelocity;
@@ -45,6 +46,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject crossHair;
     [SerializeField] private GameObject gameoverUI;
 
+    private Color spriteColor;
+
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +55,7 @@ public class PlayerController : MonoBehaviour
         dashTime = startDashTime;
         health = maxHealth;
         healthBar.SetSize(health, maxHealth);
+        spriteColor = sprite.color;
     }
 
     // Update is called once per frame
@@ -65,6 +69,12 @@ public class PlayerController : MonoBehaviour
             ps.ShootBullet();
 
             CalculateDashDirection();
+        }
+
+        if (colorChange >= 3)
+        {
+            spriteColor = Color.white;
+            sprite.color = spriteColor;
         }
     }
 
@@ -145,7 +155,7 @@ public class PlayerController : MonoBehaviour
     {
         sprite.color = Color.red;
         yield return new WaitForSeconds(0.1f);
-        sprite.color = Color.white;
+        sprite.color = spriteColor;
     }
 
     private void knockBack(GameObject target, Vector3 direction, float length, float overTime)
@@ -171,16 +181,22 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void SetHealthBar()
+    {
+        healthBar.SetSize(health, maxHealth);
+    }
+
 
     public void DamageTaken (float damage)
     {
         health -= damage;
-        healthBar.SetSize(health, maxHealth);
         StartCoroutine(FlashRed());
+        SetHealthBar();
 
         CameraController.Instance.ShakeCamera(6f, 0.1f);
         DamagePopup.Create(damagePopup, transform.position, damage);
         BloodParticleSystemHandler.Instance.SpawnBlood(transform.position, -direction);
+        StartCoroutine(FindObjectOfType<SlowDownEffects>().SlowDown(0.3f, 0.1f));
 
 
         if (health <= 0)
@@ -190,16 +206,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void PlayerDeathScreen()
+    public void PlayerDeathScreen()
     {
         //Disable colliders and controls
         gameObject.GetComponent<CircleCollider2D>().enabled = false;
         coll.enabled = false;
+        sprite.enabled = false;
         pi.enabled = false;
         rb2d.velocity = Vector2.zero;
         crossHair.SetActive(false);
 
         //Play Death Animation
+        BloodParticleSystemHandler.Instance.SpawnBlood(transform.position, -direction);
 
         //Pull up gane over screen
         gameoverUI.SetActive(true);

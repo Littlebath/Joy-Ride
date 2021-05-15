@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 834637394}
   - component: {fileID: 834637392}
   - component: {fileID: 9110467592839758893}
+  - component: {fileID: 707891223}
+  - component: {fileID: 707891222}
   m_Layer: 0
   m_Name: Health Pickup
   m_TagString: Untagged
@@ -29,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 6831071357980384068}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 40.4, y: 1.9, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -49,6 +51,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -75,7 +78,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -932593629785152681, guid: ec0a174b5f71a764fb344700c41375c6,
     type: 3}
-  m_Color: {r: 0.30597994, g: 0.7830189, b: 0.2770114, a: 1}
+  m_Color: {r: 0.2532033, g: 0.7169812, b: 0.22659309, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -97,7 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d3debbc7d0e004459424dd95a6c49b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 1000
+  particles: {fileID: 8222917050325758213, guid: 79c59018f5bd2084a9e6bf3642c8f07e,
+    type: 3}
 --- !u!50 &834637392
 Rigidbody2D:
   serializedVersion: 4
@@ -145,3 +150,64 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4, y: 0.4}
   m_EdgeRadius: 0
+--- !u!114 &707891223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6831071357980384068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LightType: 2
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 1
+  m_Color: {r: 0, g: 1, b: 0.39118576, a: 1}
+  m_Intensity: 4.41
+  m_LightVolumeOpacity: 0.356
+  m_ApplyToSortingLayers: a9073e3445381d550000000003a705cdd7deba2e
+  m_LightCookieSprite: {fileID: -932593629785152681, guid: ec0a174b5f71a764fb344700c41375c6,
+    type: 3}
+  m_UseNormalMap: 0
+  m_LightOrder: 57
+  m_AlphaBlendOnOverlap: 1
+  m_ShadowIntensity: 0.184
+  m_ShadowVolumeIntensity: 0.736
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_PointLightDistance: 3
+  m_PointLightQuality: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
+--- !u!95 &707891222
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6831071357980384068}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c6e8b2c6612a71f4688038838c27a319, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

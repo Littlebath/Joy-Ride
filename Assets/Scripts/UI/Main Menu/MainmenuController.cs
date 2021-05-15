@@ -6,9 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class MainmenuController : MonoBehaviour
 {
-    public void OpenScene(string levelName)
+    private IEnumerator OpenScene(string levelName)
     {
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(levelName);
+    }
+    public void PlayLevel(string level)
+    {
+        StartCoroutine(OpenScene(level));
     }
 
     public void ExitGame()

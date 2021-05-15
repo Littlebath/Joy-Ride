@@ -9,6 +9,8 @@ public class EnemyBase : MonoBehaviour
     [HideInInspector] public float health = 2;
     public float knockbackForce = 3f;
     public int characterID;
+    private static int enemyNumber = 22;
+    private static int enemyNumberCounter;
 
     Vector2 playerPos;
 
@@ -17,7 +19,7 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private Rigidbody2D rb2D;
     [SerializeField] private Collider2D coll;
-    [SerializeField] private SpriteRenderer sprite;
+    public SpriteRenderer sprite;
     [SerializeField] private GameObject characterHead;
     [SerializeField] private GameObject bloodExplosion;
     [SerializeField] private GameObject bloodPermanent;
@@ -81,6 +83,8 @@ public class EnemyBase : MonoBehaviour
         CameraController.Instance.ShakeCamera(6f, 0.1f);
         BloodParticleSystemHandler.Instance.SpawnBlood(transform.position, -direction);
 
+        StartCoroutine(FindObjectOfType<SlowDownEffects>().SlowDown(0.3f, 0.1f));
+
         if (health <= 0)
         {
             //GameObject head = Instantiate(characterHead, transform.position, Quaternion.identity);
@@ -88,9 +92,16 @@ public class EnemyBase : MonoBehaviour
             //head.transform.localScale = gameObject.transform.localScale;
 
             GameObject bloodExplode = Instantiate(bloodExplosion, transform.position, Quaternion.identity);
+            FindObjectOfType<AudioManager>().PlaySound("Blood Explosion");
+
             bloodExplode.transform.localScale = gameObject.transform.localScale;
             Instantiate(bloodPermanent, transform.position, Quaternion.identity);
+            //enemyNumberCounter++;
+            FindObjectOfType<EnemyManager>().AddEnemyToCounter();
+            Debug.Log(enemyNumberCounter);
             Destroy(healthBar.gameObject);
+
+            Time.timeScale = 1f;
             Destroy(gameObject);
         }
     }

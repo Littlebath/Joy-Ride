@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1832056681751613614}
   - component: {fileID: 1644789316208156264}
   - component: {fileID: 6146460127906417676}
+  - component: {fileID: 5027351868068018521}
   m_Layer: 0
   m_Name: Blood Spurt
   m_TagString: Untagged
@@ -4875,3 +4876,17 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &5027351868068018521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5973194140965917996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4627549da8128354283be164a68d7075, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Prefab: {fileID: 1204079624073523570, guid: 1332cc1362fe319488ea288f138571f9,
+    type: 3}

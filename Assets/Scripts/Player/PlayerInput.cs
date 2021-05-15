@@ -26,7 +26,7 @@ public class PlayerInput : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
         fire = Input.GetButtonDown("Fire1");
-        dash = Input.GetButtonDown("Dash");
+        //dash = Input.GetButtonDown("Dash");
         
         //Debug.Log(horizontalInput);
         //Debug.Log(verticalInput);

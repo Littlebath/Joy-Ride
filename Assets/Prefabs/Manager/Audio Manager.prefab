@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3112373288126336069
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3112373288126336091}
+  - component: {fileID: 3112373288126336068}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3112373288126336091
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3112373288126336069}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3112373288126336068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3112373288126336069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78259eebf03a9ac4f936f0ce8fb73e61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Player Shoot
+    Clip: {fileID: 8300000, guid: 50b155bcb4831734ab905a0b464f7e23, type: 3}
+    volume: 0.276
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Theme
+    Clip: {fileID: 8300000, guid: 41716d1eb7707c64783a7b9b2d93927c, type: 3}
+    volume: 0.276
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Bullet Explosion
+    Clip: {fileID: 8300000, guid: ad956e716a22d98409ae891d1639100c, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Blood Explosion
+    Clip: {fileID: 8300000, guid: 0cc8b2b02b1653844966d2f2202fec76, type: 3}
+    volume: 0.312
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Health
+    Clip: {fileID: 8300000, guid: c740da46a81c1b848850c6e45a1b0211, type: 3}
+    volume: 0.312
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Polish
+    Clip: {fileID: 8300000, guid: d52d620e64ba4fc49a509c4476eeb56a, type: 3}
+    volume: 0.312
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ButtonSounds
+    Clip: {fileID: 8300000, guid: 05464fc458437bb40bec7961e06a84e4, type: 3}
+    volume: 0.312
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

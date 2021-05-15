@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Instantiate(bulletCollisionParticles, transform.position, Quaternion.identity);
+        FindObjectOfType<AudioManager>().PlaySound("Bullet Explosion");
+
         Destroy(gameObject);
     }
 

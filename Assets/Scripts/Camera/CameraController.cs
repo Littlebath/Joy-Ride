@@ -23,6 +23,7 @@ public class CameraController : MonoBehaviour
         cam = Camera.main;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
+        canShake = false;
     }
 
     // Update is called once per frame
